@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="44dip"
+	android:orientation="vertical">
+
+	<TextView
+		android:id="@+id/indicator_text"
+		android:layout_width="fill_parent"
+		android:layout_height="40dip"
+		android:gravity="center"
+		android:text="TextView"
+		android:textColor="@color/frame"
+		android:textSize="16sp"/>
+
+	<LinearLayout
+		android:id="@+id/bottom_line"
+		android:layout_width="fill_parent"
+		android:layout_height="4dip"
+		android:orientation="horizontal"
+		android:background="@color/frame"
+		android:visibility="invisible"/>
+
+</LinearLayout>
+

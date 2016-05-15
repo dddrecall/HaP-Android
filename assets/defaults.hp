@@ -1,0 +1,22 @@
+#本文件为配置文件defaults部分
+defaults
+    #链接超时 单位:毫秒
+    timeout connect 30000ms
+    #客户端超时 单位:毫秒
+    timeout client 300000ms
+    #服务器超时 单位:毫秒
+    timeout server 300000ms
+    #HaProxy状态页面
+    stats   uri    /hap
+    option redispatch
+# 当使用了cookie时，haproxy将会将其请求的后端服务器的serverID插入到cookie中
+# 以保证会话的SESSION持久性；而此时，如果后端的服务器宕掉了，但是客户端的cookie是不会刷新的
+# 如果设置此参数，将会将客户的请求强制定向到另外一个后端server上，以保证服务的正常。
+    option abortonclose
+# 当服务器负载很高的时候，自动结束掉当前队列处理比较久的链接
+#   option httpclose
+# 这个参数我是这样理解的：
+# 使用该参数，每处理完一个request时
+# haproxy都会去检查http头中的Connection的值#
+# 如果该值不是close，haproxy将会将其删除#
+# 如果该值为空将会添加为：Connection: close。

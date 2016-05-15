@@ -1,0 +1,10 @@
+#### 块:GET GET请求方法处理模块####
+backend http-get
+    mode http
+    balance roundrobin
+    ###语法区开始#####
+    #删除请求网址的http://host
+    http-request mov-fhttp null null
+    
+    ###语法区结束#####
+server Ser [p_ip]:[p_port]

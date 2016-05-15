@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="当前网络信息"
+		android:layout_width="match_parent"
+		android:gravity="center"
+		android:background="@drawable/btitle"
+		android:id="@+id/activitysamplepager2TextView1"
+		android:layout_marginBottom="1dp"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="Text"
+		android:layout_width="wrap_content"
+		android:background="@drawable/btitle"
+		android:id="@+id/t_tname"
+		android:visibility="gone"/>
+
+	<RelativeLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_alignParentBottom="true"
+		android:id="@+id/activitysamplepager2RelativeLayout1"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="当前网络:"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/activitysamplepager2TextView1"
+		android:background="@drawable/btitle"
+		android:id="@+id/activitysamplepager2TextView5"
+		android:layout_marginBottom="1dp"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="APN信息:"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/activitysamplepager2TextView5"
+		android:background="@drawable/btitle"
+		android:id="@+id/activitysamplepager2TextView3"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_marginBottom="1dp"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="No message"
+		android:layout_width="match_parent"
+		android:layout_below="@id/activitysamplepager2TextView1"
+		android:gravity="center"
+		android:id="@+id/t_nownet"
+		android:layout_alignParentRight="false"
+		android:layout_marginBottom="1dp"
+		android:layout_toRightOf="@id/activitysamplepager2TextView5"
+		android:singleLine="true"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="No message"
+		android:layout_width="match_parent"
+		android:layout_below="@id/t_nownet"
+		android:gravity="center"
+		android:id="@+id/t_apn"
+		android:layout_marginBottom="1dp"
+		android:layout_toRightOf="@id/activitysamplepager2TextView3"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="本地网络:"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/t_apn"
+		android:background="@drawable/btitle"
+		android:id="@+id/activitysamplepager2TextView2"
+		android:layout_marginBottom="1dp"/>
+	
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="No message"
+		android:layout_width="match_parent"
+		android:layout_below="@id/t_apn"
+		android:gravity="center"
+		android:id="@+id/t_localnet"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_toRightOf="@id/activitysamplepager2TextView2"
+		android:singleLine="true"/>
+
+	<Button
+		android:layout_height="wrap_content"
+		android:text="进入接入点设置"
+		android:layout_width="wrap_content"
+		android:layout_centerInParent="true"
+		android:id="@+id/b_goapn"/>
+
+</RelativeLayout>
+

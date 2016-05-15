@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<LinearLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:orientation="vertical">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="HaPv1.4"
+			android:layout_width="match_parent"
+			android:gravity="center"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="HaP是全球首个安卓平台的HaProxy\n本软件由:淡淡的回忆编写\n细节化配置文件，新增语法，针对安卓优化等等\n本软件官网:http://byml.net 八云免流 欢迎⊙ω⊙"
+			android:layout_width="match_parent"
+			android:background="@drawable/btitle"
+			android:textColor="#000000"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="删除安装完成标识文件"
+			android:layout_width="match_parent"
+			android:layout_marginTop="10dp"
+			android:id="@+id/b_dinstall"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="下载5.0兼容包并安装"
+			android:layout_width="match_parent"
+			android:id="@+id/b_and5.0"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="查看软件更新历史"
+			android:layout_width="match_parent"
+			android:id="@+id/b_fix"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="联网更新HaP核心文件"
+			android:layout_width="match_parent"
+			android:id="@+id/b_newhx"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="查看当前HaP核心信息"
+			android:layout_width="match_parent"
+			android:id="@+id/b_hxinfo"/>
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:ems="10"
+			android:layout_width="match_parent"
+			android:id="@+id/aboutEditText1"
+			android:visibility="gone"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="Button"
+			android:layout_width="match_parent"
+			android:id="@+id/aboutButton1"
+			android:visibility="gone"/>
+
+	</LinearLayout>
+
+</ScrollView>
+

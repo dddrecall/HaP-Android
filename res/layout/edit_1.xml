@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:paddingLeft="10dip">
+
+	<EditText
+		android:layout_height="match_parent"
+		android:ems="10"
+		android:layout_width="match_parent"
+		android:id="@+id/e_e1"
+		android:gravity="top"
+		android:background="@null"
+		android:textColor="#000000"
+		android:text="test"
+		android:textSize="15sp"/>
+
+</ScrollView>
+

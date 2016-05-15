@@ -1,0 +1,15 @@
+#本文件为配置文件global部分
+#没事请不要随意修改！！！
+global
+    #工作模式
+    daemon
+    #设置用户组
+    user net_raw
+    group net_raw
+    #最大线程数
+    maxconn 1024
+    #更改工作目录为/data
+    #chroot /data
+    #pid文件，用来结束程序用的
+    pidfile ./haproxy.pid
+

@@ -1,0 +1,25 @@
+#本文件为配置文件frontend部分
+frontend http-in
+    mode http
+    #允许接收错误请求
+    option accept-invalid-http-request  
+    #LocalPort会的替换成软件的本地端口
+    #监听本地端口
+    bind 0.0.0.0:[localport]
+    #判断Host是否为:0.0.0.0
+    acl ins hdr_dom(Host) -i 0.0.0.0
+    #如果为0.0.0.0就断开链接
+    http-request deny if ins
+    #判断模式是否为GET 如果为GET http_g为true
+    acl http_g method GET
+    use_backend http-get if http_g
+
+    acl http_p method POST
+    use_backend http-post if http_p
+
+    acl http_s method CONNECT       
+    #如果http_s的值为true则调用块:https   
+    use_backend https if http_s
+   
+    #默认使用的块为:http
+    default_backend https

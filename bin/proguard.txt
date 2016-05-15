@@ -1,0 +1,40 @@
+# view AndroidManifest.xml #generated:75
+-keep class cn.domob.android.ads.DomobActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:121
+-keep class com.HaP.Byml.About { <init>(...); }
+
+# view AndroidManifest.xml #generated:130
+-keep class com.HaP.Byml.Appinfo { <init>(...); }
+
+# view AndroidManifest.xml #generated:112
+-keep class com.HaP.Byml.Code_help { <init>(...); }
+
+# view AndroidManifest.xml #generated:126
+-keep class com.HaP.Byml.Edit_file { <init>(...); }
+
+# view AndroidManifest.xml #generated:137
+-keep class com.HaP.Byml.Edit_mode { <init>(...); }
+
+# view AndroidManifest.xml #generated:76
+-keep class com.HaP.Byml.FileBrowser.FileMain { <init>(...); }
+
+# view AndroidManifest.xml #generated:134
+-keep class com.HaP.Byml.HelloJni { <init>(...); }
+
+# view AndroidManifest.xml #generated:117
+-keep class com.HaP.Byml.Help { <init>(...); }
+
+# view AndroidManifest.xml #generated:67
+-keep class com.HaP.Byml.HippoStartupIntentReceiver { <init>(...); }
+
+# view AndroidManifest.xml #generated:83
+-keep class com.HaP.Byml.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:141
+-keep class com.HaP.Byml.logo { <init>(...); }
+
+# view res/layout/activity_sample.xml #generated:8
+# view res/layout/edit_mode.xml #generated:9
+-keep class com.HaP.View.ViewPagerIndicatorView { <init>(...); }
+

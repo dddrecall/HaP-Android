@@ -1,0 +1,1111 @@
+﻿<html>
+ <head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+ </head> 
+ <body style="width:300%"> 
+  <ol type="1"> 
+   <li><a href="#pz">配置参数</a></li> 
+   <ul> 
+    <li><a href="#global">1.1 global</a></li> 
+    <ul> 
+     <li><a href="#daemon">1.1.1 daemon</a></li> 
+     <li><a href="#user">1.1.2 user group</a></li> 
+     <li><a href="#maxconn">1.1.3 maxconn</a></li> 
+     <li><a href="#chroot">1.1.4 chroot</a></li> 
+     <li><a href="#pid">1.1.5 pidfile</a></li> 
+    </ul> 
+    <li><a href="#defaults">1.2 defaults</a></li> 
+    <ul> 
+     <li><a href="#tconnect">1.2.1 timeout connect</a></li> 
+     <li><a href="#tclient">1.2.2 timeout client</a></li> 
+     <li><a href="#tserver">1.2.3 timeout server</a></li> 
+     <li><a href="#stats">1.2.4 stats </a></li> 
+     <li><a href="#oredispatch">1.2.5 option redispatch </a></li> 
+     <li><a href="#oabortonclose">1.2.6 option abortonclose </a></li> 
+     <li><a href="#ohttpclose">1.2.7 option httpclose </a></li> 
+    </ul> 
+    <li><a href="#frontened">1.3 frontened</a> </li> 
+    <ul> 
+     <li><a href="#mhttp">1.3.1 mode http </a></li> 
+     <li><a href="#oaccept-invalid-http-request">1.3.2 option accept-invalid-http-request</a></li> 
+     <li><a href="#ahttp_g method">1.3.3 acl http_g/p/s method GET/POST/HTTPS</a></li> 
+     <li><a href="#use_backend">1.3.4 use_backend http-get/post/https if http_g/p/s</a></li> 
+     <li><a href="#default_backend">1.3.5 default_backend https</a></li> 
+    </ul> 
+   </ul> 
+   <li><a href="#request">请求处理语法</a></li> 
+   <ul> 
+    <li> <a href="#request_zh">2.1 请求处理:中文语法</a> </li> 
+    <ul> 
+     <li><a href="#添加一行">2.1.1 添加一行</a></li> 
+     <li><a href="#设置行值">2.1.2 设置行值</a></li> 
+     <li><a href="#设置行值2">2.1.3 设置行值2</a></li> 
+     <li><a href="#删除一行">2.1.4 删除一行</a></li>
+     <li><a href="#删除一行2">2.1.5 删除一行2</a></li> 
+     <li><a href="#替换字符串">2.1.6 替换字符串</a></li> 
+     <li><a href="#之前添加">2.1.7 之前添加</a></li> 
+     <li><a href="#之后添加">2.1.8 之后添加</a></li> 
+     <li><a href="#行前添加">2.1.9 行前添加</a></li> 
+     <li><a href="#行后添加">2.1.10 行后添加</a></li> 
+     <li><a href="#行值前添加">2.1.11 行值前添加</a></li> 
+     <li><a href="#行值后添加">2.1.12 行值后添加</a></li> 
+      <li><a href="#行值前添加">2.1.13 URL前添加</a></li> 
+     <li><a href="#行值后添加">2.1.14 URL后添加</a></li> 
+     <li><a href="#删除网址http://host">2.1.15 删除网址http://host</a></li> 
+     <li><a href="#删除s_e">2.1.16 删除s_e</a></li> 
+     <li><a href="#删除s_e2">2.1.17 删除s_e2</a></li> 
+     <li><a href="#atob">2.1.18 atob</a></li> 
+    </ul> 
+    <li><a href="#request_en">2.2 请求处理:英文语法</a></li> 
+    <ul> 
+     <li><a href="#add_header">2.2.1 add-header</a></li> 
+     <li><a href="#set-headre">2.2.2 set-header</a></li> 
+     <li><a href="#set-headre2">2.2.3 set-header2</a></li> 
+     <li><a href="#del-header">2.2.4 del-header</a></li> 
+     <li><a href="#del-header2">2.2.5 del-header2</a></li> 
+     <li><a href="#add_before">2.2.6 add-replace</a></li> 
+     <li><a href="#add_after">2.2.7 add-before</a></li> 
+     <li><a href="#add-replace">2.2.8 add-after</a></li> 
+     <li><a href="#add_lbefore">2.2.9 add-lbefore</a></li> 
+     <li><a href="#add_lafter">2.2.10 add-lafter</a></li> 
+     <li><a href="#add_vbefore">2.2.11 add-vbefore</a></li> 
+     <li><a href="#add_vafter">2.2.12 add-vafter</a></li> 
+     <li><a href="#add_ubefore">2.2.13 add-ubfore</a></li> 
+     <li><a href="#add_uafter">2.2.14 add-uafter</a></li> 
+     <li><a href="#rep_atob">2.2.15 rep-atob</a></li>
+     <li><a href="#rep_hvalue">2.2.16 rep-havlue</a></li> 
+     <li><a href="#mov_fhttp">2.2.17 mov-fhttp</a></li> 
+     <li><a href="#mov_se">2.2.18 mov-se</a></li> 
+     <li><a href="#mov_nse">2.2.19 mov-nse</a></li> 
+    </ul> 
+   </ul> 
+   <li><a href="#">特殊用法</a></li> 
+   <ul> 
+    <li><a href="#xxcz">3.1 %[xx]操作</a></li> 
+    <ul> 
+     <li><a href="#_[url]">3.1.1 %[url]</a></li> 
+     <li><a href="#_[path]">3.1.2 %[path]</a></li> 
+     <li><a href="#_[req.hdr(Host)]">3.1.3 %[req.hdr(Host)]</a></li> 
+     <li><a href="#_[method]">3.1.4 %[method]</a></li> 
+     <li><a href="#_[req.ver]">3.1.5 %[req.ver]</a></li> 
+    </ul> 
+   </ul> 
+   <!--
+   <li><a href="#">3.2 核心函数</a></li> 
+   <ul> 
+    <li><a href="#">3.2.1 hdr</a></li> 
+    <li><a href="#ex">3.2.2 hdr_beg</a></li> 
+    <li><a href="#zoom">3.2.3 hdr_dir</a></li> 
+    <li><a href="#less">3.2.4 hdr_dom</a></li> 
+    <li><a href="#less">3.2.5 hdr_end</a></li> 
+    <li><a href="#less">3.2.6 hdr_len</a></li> 
+    <li><a href="#less">3.2.7 hdr_reg</a></li> 
+    <li><a href="#less">3.2.8 hdr_sub</a></li> 
+    <li><a href="#ex">3.2.9 path</a></li> 
+    <li><a href="#ex">3.2.10 path_beg</a></li> 
+    <li><a href="#zoom">3.2.11 path_dir</a></li> 
+    <li><a href="#less">3.2.12 path_dom</a></li> 
+    <li><a href="#less">3.2.13 path_end</a></li> 
+    <li><a href="#less">3.2.14 path_len</a></li> 
+    <li><a href="#less">3.2.15 path_reg</a></li> 
+    <li><a href="#less">3.2.16 path_sub</a></li> 
+    <li><a href="#ex">3.2.18 url</a></li> 
+    <li><a href="#ex">3.2.19 url_beg</a></li> 
+    <li><a href="#zoom">3.2.20 url_dir</a></li> 
+    <li><a href="#less">3.2.21 url_dom</a></li> 
+    <li><a href="#less">3.2.22 url_end</a></li> 
+    <li><a href="#less">3.2.23 url_len</a></li> 
+    <li><a href="#less">3.2.24 url_reg</a></li> 
+    <li><a href="#less">3.2.25 url_sub</a></li> 
+    <li><a href="#ex">3.2.26 urlp</a></li> 
+    <li><a href="#ex">3.2.27 urlp_beg</a></li> 
+    <li><a href="#zoom">3.2.28 urlp_dir</a></li> 
+    <li><a href="#less">3.2.29 urlp_dom</a></li> 
+    <li><a href="#less">3.2.30 urlp_end</a></li> 
+    <li><a href="#less">3.2.31 urlp_len</a></li> 
+    <li><a href="#less">3.2.32 urlp_reg</a></li> 
+    <li><a href="#less">3.2.33 urlp_sub</a></li> 
+    <li><a href="#ex">3.2.34 req_ver</a></li> 
+   </ul>  -->
+ </ol> 
+  <h4><a name="pz">1 配置参数</a></h4> 
+  <pre>
+ 本文是HaP核心的配置文件详解，比如global,defaults之类的能看到的配置语法，都可以在这里找着注释
+</pre> 
+  <h4><a name="global">1.1 global</a></h4> 
+  <pre>
+ global在配置文件中，主要设置一些全局性的参数，起重要作用<br />
+ 一般建议不要修改，特别是pid文件地址，如果修改了可能会导致无法正常停止HaP核心
+	</pre> 
+  <h4><a name="daemon">1.1.1 daemon</a></h4> 
+  <pre>
+ HaP核心运行方式为：后台运行
+     </pre> 
+  <h4><a name="user">1.1.2 user group</a></h4> 
+  <pre>
+ user - group 
+ 设置HAP核心工作所属的用户和组</pre> 
+ <li>示例</li>
+   <ul> 
+   
+    <pre style="background-color:#000000;color:red">
+	
+<font style="background-color:#000000;color:green"> #设置HAP核心工作的用户和组为:inet</font>
+ user inet
+ group inet 
+
+<font style="background-color:#000000;color:green"> ###################################</font>
+
+<font style="background-color:#000000;color:green"> #设置HAP核心工作的用户和组为:root</font>
+ user root 
+ group root 
+
+</pre> 
+   </ul>
+
+  <h4><a name="maxconn">1.1.3 maxconn</a></h4> 
+  <pre>
+设置每个进程可用的最大连接数
+</pre> 
+<li>示例</li>  
+    <ul>    
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置每个进程可用的最大连接数20480</font>
+ maxconn 20480
+
+</pre>    
+</ul>
+
+<h4><a name="chroot">1.1.4 chroot</a></h4> 
+  <pre>
+ 改变当前工作目录，一般不需要添加
+ 所以在配置语法中这句是注释掉的
+ 也不推荐使用，因为pidfile文件的路径是相对路径
+ 这个会干扰pidfile文件的存放地址
+ </pre> 
+ <li>示例
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置工作目录为HaP的私有目录</font>
+ chroot /data/data/com.HaP.Byml/files
+
+<font style="background-color:#000000;color:green"> #/data/data/com.HaP.Byml/files目录</font>
+<font style="background-color:#000000;color:green"> #就是HaP的私有目录</font>
+
+	</pre> 
+    </ul>
+ 
+
+  <h4><a name="pid">1.1.5 pidfile</a></h4> 
+  <pre>
+ haproxy的pid存放路径,启动进程的用户必须有权限访问此文件
+ 不推荐修改这个地址，修改以后会干扰停止自带的HAP脚本
+ </pre> 
+ 
+<li>示例</li>   
+    <ul>  
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置pidfile文件地址</font>
+ pidfile ./haproxy.pid 
+
+<font style="background-color:#000000;color:green"> #上面的配置会使在配置文件相同的目录下创建pid文件</font>
+<font style="background-color:#000000;color:green"> #及这就是相对目录，建议默认就这样</font>
+
+	</pre>
+    </ul>
+ 
+
+  <h4><a name="defaults">1.2 defaults</a></h4> 
+  <pre>
+默认的一个模块，一些超时和一些缺省值需要要设置的参数在这个模块设置
+</pre>
+  <h4><a name="tconnect">1.2.1 timeout connect</a></h4> 
+  <pre>
+ 超时参数：连接超时
+ 如果一个连接超过了超时参数设置的值没有进行响应操作，就会自动断开连接，返回一个错误的报文
+ </pre>
+<li>示例</li>
+      
+     
+    <ul>
+        
+      
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置连接超时为：30000ms</font>
+ timeout connect 30000ms
+
+</pre>
+      
+     
+    </ul>
+</li></pre> 
+  <h4><a name="tclient">1.2.2 timeout client</a></h4> 
+  <pre>
+ 超时参数：客户端超时
+ 如果客户端超过了超时参数设置的值没有进行响应操作，就会自动断开连接，返回一个错误的报文</pre>
+	<li>示例</li>
+    <ul>
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置客户端超时为：300000ms</font>
+ timeout client 300000ms
+
+</pre>
+    </ul> 
+  <h4><a name="tserver">1.2.3 timeout server</a></h4> 
+  <pre>
+ 超时参数：服务器端超时
+ 如果服务器端超过了超时参数设置的值没有进行响应操作，就会自动断开连接，返回一个错误的报文</pre>
+<li>示例</li>
+    <ul>
+    
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设服务器端超时为：3000000ms</font>
+ timeout server 30000ms
+
+</pre>     
+    </ul>
+ 
+ <h4><a name="stats">1.2.4 stats</a></h4> 
+  <pre>
+ 设置HaProxy的状态网页
+ 由于有些模式修改过的请求，会干扰HAP核心的识别状态页面
+ 所以推荐用默认透明模式进行访问状态页面</pre>
+<li>示例</li>
+    <ul>
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置HaP核心的状态页面为/hap</font>
+ stats uri /hap
+
+	</pre>
+    </ul>
+在默认透明模式下访问：http://127.0.0.1:监听端口/hap
+就可以进入状态网页
+ 
+ <h4><a name="oredispatch">1.2.5 option redispatch</a></h4> 
+  <p><b>
+  serverId对应的服务器挂掉后,强制定向到其他健康的服务器  
+  </b></p>
+ <p>&nbsp; 
+ </p>
+  <h4><a name="oabortonclose">1.2.6 option abortonclose</a></h4> 
+  <p><b>
+  当服务器负载很高的时候，自动结束掉当前队列处理比较久的连接 
+  </b></p>
+ <p>&nbsp; 
+ </p>
+  <h4><a name="ohttpclose">1.2.7 option httpclose</a></h4> 
+  <pre>
+每次请求完毕后主动关闭http通道，HA-Proxy不支持keep-alive模式 
+     HAProxy会针对客户端的第一条请求的返回添加cookie并返回给客户端，客户端发送后续请求时会发送
+
+     此cookie到HAProxy，HAProxy会针对此cookie分发到上次处理此请求的服务器上，如果服务器不能忽略
+
+     此cookie值会影响处理结果。如果避免这种情况配置此选项，防止产生多余的cookie信息。
+
+
+</pre> 
+  <h4><a name="frontened">1.3 frontened</a></h4> 
+  <b>
+frontend配置 可以在里面进行请求方法过滤和拦截请求操作
+</b> 
+  <h4><a name="mhttp">1.3.1 mode http</a></h4> 
+  <pre>
+mode { tcp|http|health }   设定启动的实例的协议类型
+非对HAP核心了解的用户禁止修改，修改后可能导致无法上网
+</pre> 
+  <li>示例 </li> 
+  <ul> 
+   <pre style="background-color:#000000;color:red">
+
+ <font style="background-color:#000000;color:green">#设置协议类型为http协议</font>
+ mode http
+
+	</pre> 
+  </ul> 
+  <h4> <a name="oaccept-invalid-http-request">1.3.2 option accept-invalid-http-request</a></h4> 
+  <pre>
+允许接受错误的http请求
+有些模式修改后，会导致核心识别为错误的请求
+导致直接返回一个错误请求，无法上网
+加上此选项就行
+</pre> 
+  <h4> <a name="ahttp_g/p/s method GET/POST/HTTPS">1.3.3 acl http_g/p/s method GET/POST/HTTPS</a></h4> 
+  <pre>
+acl 操作
+上面的http_g/p/s会在后面用的，相当于if语句的条件
+</pre> 
+  <li>示例</li> 
+  <ul> 
+   <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #判断请求模式是否为GET</font>
+ acl http_g method GET
+<font style="background-color:#000000;color:green"> #如果为GET http_g就为true</font>
+
+
+<font style="background-color:#000000;color:green"> #判断请求模式是否为POST</font>
+ acl http_p method POST
+<font style="background-color:#000000;color:green"> #如果为GET http_p就为true</font>
+
+
+<font style="background-color:#000000;color:green"> #判断请求模式是否为CONNECT(https)</font>
+ acl http_s method CONNECT
+<font style="background-color:#000000;color:green"> #如果为GET http_s就为true</font>
+
+
+</pre> 
+  </ul> 
+  
+  <h4><a name="use_backend">1.3.4 use_backend http-get/post/https if http_g/p/s</a></h4> 
+  <pre>
+如果acl操作的值为true,
+</pre>  
+  <li>示例</li> 
+   <ul> 
+    <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #如果http_g为true就使用http-get模块</font>
+ use_backend http-get if http_g
+
+<font style="background-color:#000000;color:green"> #如果http_p为true就使用http-post模块</font>
+ use_backend http-post if http_p
+
+<font style="background-color:#000000;color:green"> #如果http_s为true就使用https模块</font>
+ use_backend https if http_s
+
+</pre> 
+   </ul> <h4><a name="default_backend">1.3.5 default_backend https</a></h4> <pre>
+默认使用的模块，当请求方法非：get/post/https时，就会启用
+</pre>
+  <li>示例 </li>
+   <ul> 
+    <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置默认模块为:https</font>
+ default_backend https
+
+</pre> 
+   </ul>
+   
+   
+   <h4><a name="request_zh">2.1 中文语法</a></h4>
+   <pre>
+    主要添加中文语法的原因，是因为英文语法过多多少有些繁琐，不易写模式
+    而且很多友友都不懂英文语法，甚至看到英文就头疼
+    添加中文语法没有对HaP的效率有影响，最终的处理的都和英文语法一样
+    中文语法中的语句，都可以在英文语法里找着相同的作用的语法
+  	 HaP是一款免费的软件
+    希望尽量大家能分享一些，多帮助些新人，这样才能发展HaP
+   </pre>
+   <h4><a name="添加一行">2.1.1 添加一行</a></h4> 
+ <p style="text-indent: 2em">在请求中添加一行请求</p> 
+    <ul>
+    <li>原型</li>
+      <p style="text-indent: 2em;color:red">请求 添加一行 hanme value</p>
+     
+    <li>参数</li> <br/>
+     <ul> 
+       <li style="color:red">参数1：hname 必填，一行的行头名称</li> 
+       <li style="color:red">参数2：value 必填，一行的值，支持%[xxx]操作</li>>
+     </ul>
+    <li>示例</li>
+     <ul> 
+      <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在请求中添加一行：test: abc\r\n</font> 
+ 请求 添加一行 test abc
+
+</pre> 
+     </ul>
+   </ul>
+ <h4><a name="设置行值">2.1.2 设置行值</a></h4>
+   <p style="text-indent: 2em">设置一行的值</p> 
+ <ul> 
+     <li>原型</li>
+     <p style="text-indent: 2em;color:red"> 请求 设置行值 sanme value</p> 
+     <li>参数 <br /> <br /> 
+      <ul> 
+       <li style="color:red">参数1：sname 必填，需要设置的值得行名称</li> 
+       <li style="color:red">参数2：value 必填，一行的值 ，支持%[xxx]操作</li> 
+      </ul> <p style="text-indent: 2em">在请求中，寻找sname行，如果存在就修改sname行的值，如果不存在就在请求结尾添加sname行，值为value</p> </li> 
+     <li>示例 
+      <ul> 
+       <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置Host行的值为:10.0.0.172</font>
+ 请求 设置行值 Host 10.0.0.172
+
+</pre> 
+      </ul> </li> 
+ </ul> 
+    
+      
+   <h4><a name="设置行值2">2.1.2 设置行值2</a></h4>
+   <p style="text-indent: 2em">设置一行的值</p>
+   <pre>
+   本语法与设置行值语法的最大区别就是：
+   本语法修改行值会修改位置
+   而设置一行值语法不会修改位置
+   效率相对高一些
+   </pre> 
+ <ul> 
+     <li>原型</li>
+     <p style="text-indent: 2em;color:red"> 请求 设置行值2 sanme value</p> 
+     <li>参数 <br /> <br /> 
+      <ul> 
+       <li style="color:red">参数1：sname 必填，需要设置的值得行名称</li> 
+       <li style="color:red">参数2：value 必填，一行的值 ，支持%[xxx]操作</li> 
+      </ul> <p style="text-indent: 2em">在请求中，寻找sname行，如果存在就修改sname行的值，如果不存在就在请求结尾添加sname行，值为value</p> </li> 
+     <li>示例 
+      <ul> 
+       <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置Host行的值为:10.0.0.172</font>
+ 请求 设置行值2 Host 10.0.0.172
+
+</pre> 
+      </ul> </li> 
+ </ul> 
+  
+    
+    <h4><a name="删除一行">2.1.3 删除一行</a></h4>
+    <p style="text-indent: 2em">删除请求中的一行</p> 
+    <ul> 
+     <li>原型</li>
+     <p style="text-indent: 2em;color:red">请求 删除一行 danme</p> 
+     <li>参数 <br /> <br /> 
+      <ul> 
+       <li style="color:red">参数1：dname 必填，需要删除的行名称</li> 
+      </ul> <p style="text-indent: 2em">会删除请求中的dname行</p> </li> 
+     <li>示例</li>
+      <ul> 
+       <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #删除请求中的Host行</font>
+ 请求 删除一行 Host
+ 
+</pre> 
+      </ul> 
+    </ul>
+    
+     <h4><a name="删除一行">2.1.3 删除一行2</a></h4>
+    <p style="text-indent: 2em">删除请求中的一行</p>
+    <pre>
+    本语法与：删除一行的区别就是
+    删除一行非HaP核心自带的删除语法，是我为了效率修改后的
+    但是目前有些不稳定，推荐使用删除一行2
+    
+    </pre> 
+    <ul> 
+     <li>原型</li>
+     <p style="text-indent: 2em;color:red">请求 删除一行2 danme</p> 
+     <li>参数 <br /> <br /> 
+      <ul> 
+       <li style="color:red">参数1：dname 必填，需要删除的行名称</li> 
+      </ul> <p style="text-indent: 2em">会删除请求中的dname行</p> </li> 
+     <li>示例</li>
+      <ul> 
+       <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #删除请求中的Host行</font>
+ 请求 删除一行2 Host
+ 
+</pre> 
+      </ul> 
+    </ul>
+   
+
+    
+    <h4><a name="替换字符串">2.1.4 替换字符串</a></h4>
+    <p style="text-indent: 2em">替换请求中指定的字符串</p> 
+    <ul> 
+     <li>原型 <p style="text-indent: 2em;color:red">请求 替换字符串 str1 str2</p> </li> 
+     <li>参数 <br /> <br /> 
+      <ul> 
+       <li style="color:red">参数1：str1 必填，需要被替换的字符串，支持%[xxx]操作</li> 
+       <li style="color:red">参数2：str2 必填 ，需要替换的字符串 </li> 
+      </ul> <p style="text-indent: 2em">在请求中，把str1字符串替换为str2字符串</p> </li> 
+     <li>示例 
+      <ul> 
+       <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #修改HTTP协议版本为:1.0</font>
+ 请求 替换字符串 HTTP/1.1 HTTP/1.0
+ 
+<font style="background-color:#000000;color:green"> #把Host行替换成X-Online-Host行</font>
+ 请求 替换字符串 \nHost: \nX-Online-Host:
+
+</pre> 
+      </ul>
+    </ul> 
+      <h4><a name="之前添加">2.1.5 之前添加</a></h4><p style="text-indent: 2em">在请求中某一个字符串前面添加字符串</p> 
+    <ul> 
+     <li>原型</li>
+      <p style="text-indent: 2em;color:red">请求 之前添加 字符串1 字符串2</p>
+     <li>参数 <br /> 
+      <ul> 
+       <li style="color:red">参数1： 必填，确定在哪一个字符串前面添加字符串</li> 
+       <li style="color:red">参数2： 必填，需要添加的字符串，支持%[xxx]操作</li> 
+      </ul> <p style="text-indent: 2em">在请求中的的字符串1钱买添加字符串2</p> </li> 
+     <li>示例 
+      <ul> 
+       <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在Host行前面添加一行：test,值为abc</font>
+ 请求 值之前添加 Host test:\ abc\r\n
+		</pre> 
+      </ul> 
+    </ul>
+       <h4><a name="之后添加">2.1.5 之后添加</a></h4><p style="text-indent: 2em">在请求中指定字符串后面添加字符串</p> 
+    <ul> 
+     <li>原型</li>
+      <p style="text-indent: 2em;color:red">请求 之后添加 字符串1 字符串2</p>
+     <li>参数 <br /> 
+      <ul> 
+       <li style="color:red">参数1： 必填，确定在哪个字符串后面添加字符串</li> 
+       <li style="color:red">参数2： 必填，需要添加的字符串，支持%[xxx]操作</li> 
+      </ul> <p style="text-indent: 2em">在请求中的的name行后面添加str字符串</p> </li> 
+     <li>示例 
+      <ul> 
+       <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在首行下面添新的一行test 值为abc</font>
+ 请求 之后添加 \n test:\ abc\r\n
+		</pre> 
+      </ul> 
+    </ul>
+    
+    <h4><a name="行前添加">2.1.5 行前添加</a></h4><p style="text-indent: 2em">在请求中某一行前面添加字符串</p> 
+    <ul> 
+     <li>原型</li>
+      <p style="text-indent: 2em;color:red">请求 行前添加 name str</p>
+     <li>参数 <br /> 
+      <ul> 
+       <li style="color:red">参数1： 必填，确定在哪一行前面添加字符串</li> 
+       <li style="color:red">参数2： 必填，需要添加的字符串 符串，支持%[xxx]操作</li> 
+      </ul> <p style="text-indent: 2em">在请求中的的name行后面添加str字符串</p> </li> 
+     <li>示例 
+      <ul> 
+       <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在Host行前面添加一行：test,值为abc</font>
+ 请求 行前添加 Host test:\ abc\r\n
+		</pre> 
+      </ul> 
+    </ul>
+    
+    <h4><a name="行后添加">2.1.6 行后添加</a> </h4> 
+    <p style="text-indent: 2em">在请求中某一行后面添加字符串</p> 
+   <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">请求 行后添加 name str</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 必填，确定在哪一行后面添加字符串</li> 
+      <li style="color:red">参数2： 必填，需要添加的字符串，支持%[xxx]操作</li> 
+     </ul> <p style="text-indent: 2em">在请求中的的name行后面添加str字符串</p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在Host行后面添加一行：test,值为abc</font>
+ 请求 行后添加 Host test:\ abc\r\n
+
+		</pre> 
+    </ul> 
+   </ul> 
+   
+   <h4><a name="行值前添加">2.1.7 行值前添加</a> </h4> 
+    <p style="text-indent: 2em">在一行值的前面添加字符串</p> 
+   <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">请求 行值前添加 name str</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 必填，确定在哪一行值的前面添加字符串</li> 
+      <li style="color:red">参数2： 必填，需要添加的字符串，支持%[xxx]操作</li> 
+     </ul> <p style="text-indent: 2em">在请求中的的name的值前面添加添加str字符串</p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在Host行值前面添加字符串：abc</font>
+ 请求 行值前添加 Host abc
+<font style="background-color:#000000;color:green"> #如果Host行整行为:Host: wap.baidu.com\r\n
+ #那么使用上面的Host行就会变成：Host:abcwap.baidu.com\r\n
+ #这个时候Host行值的前面增加了abc，这就是：行值前添加语法的作用
+</font>
+		</pre> 
+    </ul> 
+   </ul> 
+   
+     <h4><a name="行值后添加">2.1.8 行值后添加</a> </h4> 
+    <p style="text-indent: 2em"></p> 
+   <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">请求 行值后添加 name str</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 必填，确定在哪一行值的后面/li> 
+      <li style="color:red">参数2： 必填，需要添加的字符串，支持%[xxx]操作</li> 
+     </ul> <p style="text-indent: 2em"></p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在Host行值后面添加abc</font>
+ 请求 行值后添加 Host abc
+ <font style="background-color:#000000;color:green">#如果Host行的整行为:Host: wap.baidu.com\r\n
+ #使用上面的语法后Host整行为：Host: wap.baidu.comabc\r\n
+ #这个时候Host行值后面添加了abc，这就是：行值后添加语法的作用
+ </font>
+		</pre> 
+    </ul> 
+   </ul> 
+   
+  
+     <h4><a name="行值后添加">2.1.8 URL前添加</a> </h4> 
+    <p style="text-indent: 2em"></p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">请求 URL前添加 name str</p>
+    <li>参数<br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 必填，确定在哪一行值的后面/li> 
+      <li style="color:red">参数2： 必填，需要添加的字符串，支持%[xxx]操作</li> 
+     </ul> <p style="text-indent: 2em"></p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在Host行值后面添加abc</font>
+ 请求 行值后添加 Host abc
+ <font style="background-color:#000000;color:green">#如果Host行的整行为:Host: wap.baidu.com\r\n
+ #使用上面的语法后Host整行为：Host: wap.baidu.comabc\r\n
+ #这个时候Host行值后面添加了abc，这就是：行值后添加语法的作用
+ </font>
+		</pre> 
+    </ul> 
+ </ul> 
+     
+     <h4><a name="行值后添加">2.1.8 	URL后添加</a> </h4> 
+    <p style="text-indent: 2em"></p> 
+   <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">请求 URL后添加 name str</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 必填，确定在哪一行值的后面/li> 
+      <li style="color:red">参数2： 必填，需要添加的字符串，支持%[xxx]操作</li> 
+     </ul> <p style="text-indent: 2em"></p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在Host行值后面添加abc</font>
+ 请求 行值后添加 Host abc
+ <font style="background-color:#000000;color:green">#如果Host行的整行为:Host: wap.baidu.com\r\n
+ #使用上面的语法后Host整行为：Host: wap.baidu.comabc\r\n
+ #这个时候Host行值后面添加了abc，这就是：行值后添加语法的作用
+ </font>
+		</pre> 
+    </ul> 
+   </ul> 
+   
+    <h4><a name="">2.1.9 删除网址http://host</a> </h4> 
+ <p style="text-indent: 2em"></p> 
+   <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">请求 删除网址http://host null null</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 可选，默认null即可</li> 
+      <li style="color:red">参数2： 可选，默认null即可 </li> 
+     </ul>
+     <p style=""> 在请求的第一行通常是这样的<br/>
+       GET(method) http://wap.baidu.com/?from=xxx<br>
+       由于某些特殊修改请求的方法，需要去掉请求中的http://wap.baidu.com<br>	
+       所以出现了上面的语法，语法跟mov-fhttp null null 作用一样
+     </p>
+      
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #删除网址http://host</font>
+请求 删除网址http://host null null
+ 		</pre> 
+    </ul> 
+   </ul> 
+    <h4><a name="删除s_e">2.1.10 删除s_e </a> </h4> 
+    <p style="text-indent: 2em"></p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">请求 删除s_e start end</p>
+   <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 必填,开始字符</li> 
+      <li style="color:red">参数2： 必填，结束字，支持%[xxx]操作符 </li> 
+     </ul> <p style="text-indent: 2em">删除start到end之间的字符，保留end</p> 
+   <li>示例</li> 
+   <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #删除网址http://host</font>
+ 请求 删除s_e http:// /
+ 
+<font style="background-color:#000000;color:green"> #上面的语句的作用就等于删除网址http://</font>
+		</pre> 
+   </ul> 
+ </ul> 
+    <h4><a name="删除s_e2">2.1.11 删除s_e2</a> </h4> 
+    <p style="text-indent: 2em"></p> 
+   <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">请求 删除s_e2 start end</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 必填，开始的字符/</li> 
+      <li style="color:red">参数2： 结束的字符串，支持%[xxx]操作</li> 
+     </ul>
+     <p style="text-indent: 2em">删除start到end的字符，删除end
+     跟：删除s_e的区别就是s_e保留了end,这个语法删除了end
+     </p> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #删除Host行</font>
+ 请求 删除s_e2 Host \r\n
+ <font style="background-color:#000000;color:green"> #上面的语法的意思是删除：以Host开头到以\r\n结尾的字符串，开头和结尾都删除</font>
+
+		</pre> 
+    </ul> 
+   </ul> 
+    <h4><a name="">2.1.12 atob a b</a> </h4> 
+ <p style="">主要就是转换行头（行头就是一行的名字，通常有Host行的叫法，就是因为行头为：Host）
+   <br>
+    如果a行存在，那么行头就替换成b行
+    <br>
+    b行不管存不存在都会被删除<br>
+    其中如果a行的值为空，那么a行将会被删除，b行保留
+ </p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">请求 atob a b</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 必填，A行</li> 
+      <li style="color:red">参数2： 必填，B行</li> 
+     </ul> <p style="text-indent: 2em"></p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #X-Online-Host转Host</font>
+ 请求 atob X-Online-Host Host
+		</pre> 
+    </ul> 
+ </ul> 
+
+ <p>请求处理:英文语法     </p>
+   <ul>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+     <li></li>
+   </ul>
+   <p>&nbsp;</p>
+   <h4><a name="request_en">2.2 英语语法</a> </h4> 
+ <pre>
+    这里语法的作用都是同上面中文语法的
+    英文语法在后来的版本中对原来的语法进行优化和修复
+    对HaP自带的语法也相应的做了改动
+    1.set-header语法 
+    	原始：
+        	修改一行的值会先删除这一行
+            然后在请求尾部添加新的一行
+            这样造成了不必要的效率损耗
+        现在：
+        	为自定义语法，如果这一行存在就修改值
+            不先删除然后添加，这样提高了效率
+            也就是现在的set-header不会修改行的位置
+        其他：
+        	对于原来的set-header修改位置的语法做了保留操作
+            set-header2 就是原来修改位置的set-header语法
+     2.del-header语法
+     	替换了原先的语法，原语法为：del-header2
+        如果追求稳定，推荐使用del-header2语法
+    </pre>
+    
+   
+   <h4><a name="add-header">2.2.1 add-header</a> </h4> 
+    <p style="text-indent: 2em">添加一行</p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request add-header h v</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">h： 必填，需要添加的行</li> 
+      <li style="color:red">v： 必填，需要添加行的值</li> 
+     </ul> <p style="text-indent: 2em">添加新的一行，行头为h，值为v</p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #添加test行，值为abc</font>
+ http-request add-header test abc 
+		</pre> 
+    </ul> 
+   </ul> 
+   
+   
+      <h4><a name="set-header">2.2.2 set-header</a> </h4> 
+    <p style="text-indent: 2em">设置一行的值</p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request set-header h v</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">h： 必填，需要修改值的行</li> 
+      <li style="color:red">v： 必填， 需要修改的值</li> 
+     </ul> <p style="text-indent: 2em">设置h行的值为v.不会修改位置</p></li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #设置Host行的值为10.0.0.172</font>
+ http-request set-header Host 10.0.0.172
+		</pre> 
+    </ul> 
+   </ul> 
+   
+      <h4><a name="set-header2">2.2.3 set-header2</a> </h4> 
+    <p style="text-indent: 2em">设置一行的值</p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request set-header2 h v</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">h： 必填，需要修改值的行</li> 
+      <li style="color:red">v： 必填， 需要修改的值</li> 
+     </ul> <p style="text-indent: 2em"></p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #</font>
+ http-request 
+		</pre> 
+    </ul> 
+   </ul> 
+     <h4><a name="">2.2.4 del-header</a> </h4> 
+    <p style="text-indent: 2em">删除请求中的一行</p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request del-header h </p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">h： 必填，被删除的行头</li> 
+   
+     </ul> <p style="text-indent: 2em">删除请求中的h行</p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #删除请求中的Host行</font>
+ http-request del-header Host
+		</pre> 
+    </ul> 
+   </ul> 
+   
+     <h4><a name="del-heaedr2">2.2.5 del-header2</a> </h4> 
+    <p style="text-indent: 2em">删除请求中的一行，与del-heder语法的区别就是此语法更稳当，del-header语法为开发语法</p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request del-header h</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">h： 必填，被删除的行头 </li>
+     </ul>
+   </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #删除请求中Host行</font>
+ http-request del-header2 Host
+		</pre> 
+    </ul> 
+   </ul> 
+
+
+ 
+ 
+ 
+ 2.2.12 add-vafter
+
+2.2.13 add-ubfore
+
+2.2.14 add-uafter
+
+2.2.15 rep-atob
+
+2.2.16 rep-havlue
+
+2.2.17 mov-fhttp
+
+2.2.18 mov-se
+
+2.2.19 mov-nse
+   
+   
+   
+      <h4><a name="add-replace"> </a> 2.2.6 add-replace</h4> 
+ <p style="text-indent: 2em">替换请求中的字符串</p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request add-replace str1 str2</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">str1： 必填，被替换的字符串</li> 
+      <li style="color:red">str2： 必填， 替换的字符串</li> 
+     </ul> <p style="text-indent: 2em">把请求中的str1字符串替换成str2字符串</p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #更改http协议版本为1.0</font>
+ http-request add-replace HTTP/1.1 HTTP/1.0
+		</pre> 
+    </ul> 
+   </ul> 
+   
+    <h4><a name="">2.2.7 add-before</a> </h4> 
+    <p style="text-indent: 2em">在指定字符串前面添加字符串</p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request add-before name str</p>
+   <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">name： 必填，定位在那个字符串前面添加字符串</li> 
+      <li style="color:red">str：str 需要添加的字符串 </li>
+     </ul>
+   </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #Host行前添加一行test,值为abc</font>
+ http-request add-before Host test:\ abc\r\n 
+		</pre> 
+    </ul> 
+ </ul>    
+    <h4><a name="add-after">2.2.8 add-after</a> </h4> 
+    <p style="text-indent: 2em">在指定字符串后面添加字符串</p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request add-after name str</p>
+   <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">name： 必填,定位那个字符后面添加字符</li> 
+      <li style="color:red">str： 必填，要添加的字符</li>
+     </ul>
+   </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在首行下面添加一个Host 值为test</font>
+ http-rrequest add-after \n Host:\ test\r\n
+		</pre> 
+    </ul> 
+ </ul> 
+      <h4><a name="add-lbefore">2.2.9 add-lbefore </a> </h4> 
+ <p style="text-indent: 2em">在指定行之前添加字符串</p> 
+ <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request add-lbefore h str</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">h： 必填，指定行之前</li> 
+      <li style="color:red">str： 必填， 添加的字符串</li> 
+     </ul> <p style="text-indent: 2em"></p> </li> 
+    <li>示例</li> 
+   <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在Host行前添加新的一行test值为abc</font>
+ http-request add-lbeofore Host test:\ abc\r\n
+		</pre> 
+    </ul> 
+   </ul>  
+     <h4><a name="add-lafter"> 2.2.10 add-lafter </a> </h4> 
+ <p style="text-indent: 2em">在指定行后添加字符串</p> 
+   <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request add-lafter h str</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">h： 必填，在指定的行后</li> 
+      <li style="color:red">str： 必填， 添加的字符串</li> 
+     </ul> <p style="text-indent: 2em"></p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #在Host行后添加新的一行:test行值为：abv</font>
+ http-request add-lafter Host test:\ abc\r\n
+		</pre> 
+    </ul> 
+   </ul> 
+     <h4><a name="add-vbefore">2.2.11 add-vbefore </a> </h4> 
+    <p style="text-indent: 2em"></p> 
+   <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request add-vbefore h v</p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">h： 必填，确定在哪一行值得前面添加字符串</li> 
+      <li style="color:red">v： 必填，添加的字符串 </li> 
+     </ul> <p style="text-indent: 2em">在h行的值后面添加字符串v</p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #</font>
+ http-request 
+		</pre> 
+    </ul> 
+   </ul> 
+    <h4><a name=""> </a> </h4> 
+    <p style="text-indent: 2em"></p> 
+   <ul> 
+    <li>原型</li>
+    <p style="text-indent: 2em;color:red">http-request </p>
+    <li>参数 <br /> <br /> 
+     <ul> 
+      <li style="color:red">参数1： 必填，</li> 
+      <li style="color:red">参数2： 必填， </li> 
+     </ul> <p style="text-indent: 2em"></p> </li> 
+    <li>示例</li> 
+    <ul> 
+     <pre style="background-color:#000000;color:red">
+
+<font style="background-color:#000000;color:green"> #</font>
+ http-request 
+		</pre> 
+    </ul> 
+   </ul> 
+   
+</body>
+</html

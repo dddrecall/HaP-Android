@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:background="@drawable/btitle">
+
+	<RelativeLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent">
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_alignParentBottom="false"
+			android:id="@+id/editfileLinearLayout1">
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="取消"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:id="@+id/e_fcancel"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="APP"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:id="@+id/e_fuid"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="保存"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:id="@+id/e_fsave"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="match_parent"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:layout_below="@id/editfileLinearLayout1"
+			android:id="@+id/editfileLinearLayout2">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="保存文件名"
+				android:layout_width="match_parent"
+				android:gravity="center"
+				android:background="@drawable/btitle"
+				android:textColor="@color/frame"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="match_parent"
+				android:gravity="top"
+				android:singleLine="true"
+				android:id="@+id/e_fname"
+				android:textColor="#4CDCFF"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="文件内容"
+				android:layout_width="match_parent"
+				android:gravity="center"
+				android:background="@drawable/btitle"
+				android:textColor="@color/frame"/>
+
+			<EditText
+				android:layout_height="match_parent"
+				android:ems="10"
+				android:layout_width="match_parent"
+				android:gravity="top"
+				android:id="@+id/e_fcontent"
+				android:textColor="#000000"
+				android:background="@null"
+				android:paddingLeft="10dip"
+				android:textSize="15sp"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/editfileLinearLayout2"
+			android:id="@+id/editfileLinearLayout3"
+			android:gravity="center"
+			android:background="@drawable/btitle">
+
+			<TextView
+				android:layout_height="match_parent"
+				android:layout_width="wrap_content"
+				android:gravity="center"
+				android:background="@drawable/btitle"
+				android:textColor="#84F0E8"
+				android:visibility="gone"/>
+
+			<CheckBox
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:id="@+id/e_checkbox"
+				android:visibility="gone"/>
+
+		</LinearLayout>
+
+	</RelativeLayout>
+
+</ScrollView>
+

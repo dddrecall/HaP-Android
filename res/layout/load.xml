@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent"
+	android:gravity="center">
+
+	<ProgressBar
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content"
+		android:id="@+id/loadProgressBar1"
+		android:layout_marginTop="10dp"
+		android:layout_marginLeft="10dp"/>
+
+	<ImageView
+		android:layout_height="40dip"
+		android:layout_width="40dip"
+		android:layout_marginTop="15dp"
+		android:layout_marginLeft="17dip"
+		android:baselineAlignBottom="true"
+		android:src="@android:drawable/ic_dialog_alert"
+		android:id="@+id/loadImageView1"
+		android:visibility="invisible"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:text="Text"
+		android:layout_width="match_parent"
+		android:layout_toRightOf="@id/loadImageView1"
+		android:id="@+id/loadTextView1"
+		android:layout_marginTop="11dp"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="20dp"
+		android:gravity="center"/>
+
+	<ProgressBar
+		android:layout_height="wrap_content"
+		style="?android:attr/progressBarStyleHorizontal"
+		android:layout_width="match_parent"
+		android:layout_below="@id/loadTextView1"
+		android:layout_toRightOf="@id/loadImageView1"
+		android:layout_marginTop="6dp"
+		android:id="@+id/loadProgressBar2"
+		android:layout_marginLeft="10dp"
+		android:layout_marginRight="20dp"/>
+
+	<TextView
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:layout_below="@id/loadImageView1"
+		android:background="@drawable/btitle"
+		android:id="@+id/loadTextView2"
+		android:scrollbars="vertical"
+		android:layout_margin="10dp"/>
+
+</RelativeLayout>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent">
+
+	<TextView
+		android:id="@+id/file_path"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:padding="5dp"
+		android:background="#A5BBFF"
+		android:textSize="15sp"
+		android:text="TextView"
+		android:textColor="#FFFFFF"/>
+
+	<ListView
+		android:id="@android:id/list"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"/>
+
+</LinearLayout>
+

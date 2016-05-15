@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="wrap_content"
+	android:layout_width="wrap_content">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_marginBottom="48dip">
+
+		<ExpandableListView
+			android:id="@+id/pager_0_list"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:cacheColorHint="#00000000"
+			
+			
+			/>
+
+	</LinearLayout>
+
+	<Button
+		android:layout_height="wrap_content"
+		android:text="添加"
+		android:layout_width="wrap_content"
+		android:layout_alignParentRight="true"
+		android:gravity="center"
+		android:id="@+id/badd"
+		android:background="@drawable/btn_holo_light"/>
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="1px"
+		android:id="@+id/pager_0_LinearLayout_sss">
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="停止"
+			android:layout_width="wrap_content"
+			android:layout_weight="0.1"
+			android:id="@+id/bstop"
+			android:background="@drawable/btn_holo_light"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="启动"
+			android:layout_width="wrap_content"
+			android:layout_weight="10.0"
+			android:id="@+id/bstart"/>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="状态"
+			android:layout_width="wrap_content"
+			android:layout_weight="0.1"
+			android:id="@+id/bstatus"
+			android:background="@drawable/btn_holo_light"/>
+
+	</LinearLayout>
+
+	<Button
+		android:layout_height="wrap_content"
+		android:text="导入"
+		android:layout_width="wrap_content"
+		android:layout_below="@id/badd"
+		android:layout_alignParentRight="true"
+		android:id="@+id/bimport"/>
+
+</RelativeLayout>
+

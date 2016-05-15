@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.HaP.Byml"
+    android:installLocation="auto"
+    android:versionCode="14500"
+    android:versionName="1.4.5" >
+
+    <uses-sdk 
+		android:minSdkVersion="9" 
+		android:targetSdkVersion="14"
+		android:maxSdkVersion="22"/>
+	<!-- 网络访问权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 获取网络信息状态，如当前的网络连接是否有效 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 读取手机状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 允许程序写入外部存储，如SD卡上写文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 获取错略位置 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 获取WiFi状态 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- 以下权限为可选权限，主要是品牌广告会用到，如果您没有添加，需要这些效果的品牌广告将不会投放到您的应用上 -->
+    <!-- 震动权限 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<!-- 联网 -->
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+	<!-- 创建和删除文件 -->
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+	<!-- 写文件 -->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+	<uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+	<uses-permission android:name="android.permission.GET_TASKS"></uses-permission>
+
+	<!-- 获取错略位置 -->
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/ApphaveTitle"
+
+	>
+		<!-- 委派receiver名稱為類別名稱 -->
+		<receiver android:name=".HippoStartupIntentReceiver" >
+			<!-- 在filter裡設定BOOT_COMPLETED為要捕捉的訊息  -->
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED" />
+
+				<category android:name="android.intent.category.HOME" />
+			</intent-filter>
+		</receiver>
+		<activity android:name="cn.domob.android.ads.DomobActivity" android:theme="@android:style/Theme.Translucent"></activity>
+		<activity android:name=".FileBrowser.FileMain"
+			android:label="选择文件">
+			android:configChanges="keyboardHidden|orientation"
+
+		</activity>
+
+
+		<activity android:name=".MainActivity"
+			android:label="@string/app_name">
+
+
+			﻿  <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <action android:name="android.intent.action.EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:mimeType="application/octet-stream" />
+                <data android:mimeType="text/*" />
+
+
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/*" />
+            </intent-filter>
+			<meta-data android:value="8f5f5653774608778f61f8f803d374e3" android:name="BUG_HD_SDK_GENERAL_KEY" />
+
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+
+		</activity>
+		<activity 
+			android:name=".Code_help"
+			android:label="@string/code_help">
+        </activity>
+
+		<activity 
+			android:name=".Help"
+			android:label="@string/help">
+        </activity>
+		<activity 
+			android:name=".About"
+			android:label="@string/about">
+        </activity>
+
+		<activity android:name=".Edit_file"
+			android:label="@string/edit_file"
+		>  
+		</activity>
+		<activity android:name=".Appinfo"
+			android:label="@string/appinfo"
+			android:theme="@style/Theme.CustomDialog">							
+        </activity>
+		<activity android:name=".HelloJni"
+			android:label="@string/app_name">
+        </activity>
+		<activity android:name=".Edit_mode"
+			android:label="@string/edit_mode">
+        </activity>
+
+        <activity android:name=".logo"
+			android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
+			</intent-filter>
+        </activity>
+    </application>
+</manifest> 

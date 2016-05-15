@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<RelativeLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent"
+		android:focusable="true"
+		android:focusableInTouchMode="true">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="配置文件公共部分:点击编辑"
+			android:layout_width="match_parent"
+			android:gravity="center"
+			android:background="@drawable/btitle"
+			android:id="@+id/activitysamplepager1TextView1"
+			android:textColor="#62D6C1"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/activitysamplepager1TextView1"
+			android:id="@+id/activitysamplepager1LinearLayout1">
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="global"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:id="@+id/bglobal"
+				android:gravity="center"/>
+
+			<Button
+				android:text="defaults"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:id="@+id/bdefaults"
+				android:layout_height="wrap_content"
+				android:gravity="center"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="frontend"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:id="@+id/bfrontend"
+				android:gravity="center"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/activitysamplepager1LinearLayout1"
+			android:id="@+id/activitysamplepager1LinearLayout2"
+			android:background="@drawable/btitle">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="监听端口"
+				android:layout_width="wrap_content"
+				android:gravity="center"
+				android:background="@drawable/btitle"
+				android:layout_weight="1.0"
+				android:textColor="#28EAB3"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="代理IP"
+				android:layout_width="wrap_content"
+				android:layout_weight="2.0"
+				android:gravity="center"
+				android:textColor="#41E2AA"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="代理端口"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:gravity="center"
+				android:textColor="#41E2AA"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/activitysamplepager1LinearLayout2"
+			android:id="@+id/activitysamplepager1LinearLayout3">
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.8"
+				android:singleLine="true"
+				android:hint="端口"
+				android:gravity="center"
+				android:text="8787"
+				android:id="@+id/elport"
+				android:background="@drawable/edit_b"
+				android:layout_margin="4dip"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="wrap_content"
+				android:singleLine="true"
+				android:hint="代理服务器IP"
+				android:gravity="center"
+				android:text="10.0.0.172"
+				android:id="@+id/epip"
+				android:layout_weight="1.0"
+				android:background="@drawable/edit_b"
+				android:layout_margin="4dip"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.8"
+				android:singleLine="true"
+				android:gravity="center"
+				android:hint="端口"
+				android:text="80"
+				android:id="@+id/eport"
+				android:background="@drawable/edit_b"
+				android:layout_margin="4dip"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/activitysamplepager1LinearLayout3"
+			android:background="@drawable/btitle"
+			android:id="@+id/activitysamplepager1LinearLayout6">
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="伪装Host1"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:gravity="center"
+				android:textColor="#93EAFF"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="伪装Host2"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:gravity="center"
+				android:textColor="#93EAFF"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/activitysamplepager1LinearLayout6"
+			android:id="@+id/activitysamplepager1LinearLayout7">
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:id="@+id/e_phost1"
+				android:hint="[p_host1]"
+				android:gravity="center"
+				android:singleLine="true"
+				android:layout_margin="4dip"
+				android:background="@drawable/edit_b"/>
+
+			<EditText
+				android:layout_height="wrap_content"
+				android:ems="10"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:id="@+id/e_phost2"
+				android:hint="[p_host2]"
+				android:gravity="center"
+				android:singleLine="true"
+				android:layout_margin="4dp"
+				android:background="@drawable/edit_b"/>
+
+		</LinearLayout>
+
+		<Button
+			android:layout_height="wrap_content"
+			android:text="保存"
+			android:layout_width="match_parent"
+			android:layout_below="@id/activitysamplepager1LinearLayout7"
+			android:id="@+id/bpsave"
+			android:gravity="center"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="自定义脚本:点击执行|长按编辑"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:layout_width="match_parent"
+			android:layout_below="@id/bpsave"
+			android:background="@drawable/btitle"
+			android:gravity="center"
+			android:id="@+id/activitysamplepager1TextView2"
+			android:textColor="#59D9D9"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/activitysamplepager1TextView2"
+			android:id="@+id/activitysamplepager1LinearLayoutf">
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="防跳开启"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:singleLine="true"
+				android:id="@+id/bfstart"
+				android:gravity="center"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="防跳状态"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:singleLine="true"
+				android:id="@+id/bfstatus"
+				android:gravity="center"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="防跳关闭"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:singleLine="true"
+				android:id="@+id/bfstop"
+				android:gravity="center"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/activitysamplepager1LinearLayoutf"
+			android:id="@+id/activitysamplepager1LinearLayout4">
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="自定义①"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:singleLine="true"
+				android:id="@+id/bdiy1"
+				android:gravity="center"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="自定义②"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:singleLine="true"
+				android:id="@+id/bdiy2"
+				android:gravity="center"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="自定义③"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:singleLine="true"
+				android:id="@+id/bdiy3"
+				android:gravity="center"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="自定义首页执行命令:点击编辑"
+			android:layout_width="match_parent"
+			android:layout_below="@id/activitysamplepager1LinearLayout4"
+			android:gravity="center"
+			android:background="@drawable/btitle"
+			android:id="@+id/activitysamplepager1TextView3"
+			android:textColor="#A0E8E8"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/activitysamplepager1TextView3"
+			android:id="@+id/activitysamplepager1LinearLayout5">
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="停止"
+				android:layout_width="wrap_content"
+				android:layout_weight="0.1"
+				android:id="@+id/sbstop"
+				android:gravity="center"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="启动"
+				android:layout_width="wrap_content"
+				android:layout_weight="10.0"
+				android:id="@+id/sbstart"
+				android:gravity="center"/>
+
+			<Button
+				android:layout_height="wrap_content"
+				android:text="状态"
+				android:layout_width="wrap_content"
+				android:layout_weight="0.1"
+				android:id="@+id/sbstatus"
+				android:gravity="center"/>
+
+		</LinearLayout>
+
+	</RelativeLayout>
+
+</ScrollView>
+

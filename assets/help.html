@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html style="cursor: auto ! important;" lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<title>HaP帮助说明</title>
+<meta name="viewport"
+	content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<style type="text/css">
+html,body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: #ffffff;
+	text-align: left;
+	width: 100%;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	-webkit-text-size-adjust: none;
+}
+
+h2 {
+	font-weight: normal;
+	color: #333333;
+	font-size: 16px;
+	padding: 0 18px;
+}
+
+h3 {
+	font-weight: normal;
+	color: #0285f0;
+	font-size: 18px;
+	padding: 0 18px;
+}
+
+p {
+	font-weight: normal;
+	color: #666666;
+	font-size: 14px;
+	padding: 0 20px;
+}
+
+ul {
+	list-style: none;
+	padding: 0px;
+}
+
+ol li {
+	padding: 10px;
+}
+input {text-align:center;}
+input.bok {
+ text-align:center;
+ BORDER:0px outset #00ffff;
+ BACKGROUND-COLOR:#ffffff;
+ background-color:#28ACEE;
+ font-size:100%;
+ width:45%;
+ HEIGHT:20%;
+ cursor:hand;
+ color:#fff;
+ margin: 5px;
+	
+}
+input.ipt{
+ BORDER:0px outset #efefef;
+ BACKGROUND-COLOR:#efefef;
+ background-color: #efefef; 
+ width:95%;
+ color:#505050;
+ text-align:center;
+}
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+	var what_hap = function(){
+		alert("\nHaP是全球首个安卓平台的HaProxy\n本软件由:淡淡的回忆编写\n细节化配置文件，新增语法，针对安卓优化等等\n本软件官网:http://byml.net 八云免流 欢迎⊙ω⊙\nHaP简单来说就是一个本地代理服务器，通过设置接入点开启防跳，来拦截http/s请求，然后经过模式的修改再转发给网关。\n");
+	};
+	
+	var what_use_hap = function(){
+		alert("\n由于HaP是一个本地的代理服务器\n\n所以如果要接收上网请求就得先设置接入点\n\n下面的常见问题有怎么设置接入点相关的\n\n设置接入点后就到HaP软件点击默认透明模式\n\n点击透明下面的启动模式 最下面提示的是正在运行就可用\n\n然后进入状态网页，下面有怎么解释进入状态网页(能进入就正常)\n\nHaP在选项中有自带的防跳，防跳可以自动半放行QQ\n一般用户使用这个防跳就足够使用了\n\n还可以导入不同的模式，具体去官网http://byml.net查看\n");
+	};
+	var what_apn = function(){
+		alert("\n接入点相当于运营商规定的http/s的代理服务器配置文件\n\n在里面可以看到xxwap接入点\n这种接入点规定一般发出的http请求都通过xxwap接入点里的代理来访问互联网\n\n而socket连接不会通过\n\n设置接入点的作用简单来说就是把http/s上网使用的代理设置成HaP所监听的本地IP:端口\n这样请求就会通过HaP然后再传输到指定的代理服务器\n");
+		};
+	var what_phost = function(){
+		alert("\n选项界面中的伪装Host1和伪装Host2可以在模式中调用\n调用方法:\n伪装Host1对应>:[p_host1]\n伪装Host2对应>:[p_host2]\n");
+		};
+	var what_mode = function(){
+		alert("\n模式就是不同处理http/s请求的配置文件\n在HaP中可以进行增删head行，某一行值，前后添加数据\n之类的操作\n所以有了模式，可以自己diy操作，然后保存成一个模式\n使用的时候点击那个模式启动就行\n");
+		};
+	var what_ft = function(){
+		alert("\n防跳是一种脚本\n具体来说是创建iptables的规则脚本\n可以把所以通过80,8080,443端口所发出的请求转发到HaP进行处理\n长按可以进行编辑脚本，自己diy吧！\n");
+		};
+		
+</script>
+
+	<div class="faq_list">
+		<ul>
+			<li>
+				<h2>新手必看(点按钮查看)：<br>
+				<input onclick="what_hap();" class="bok" value="HaP是什么?" type="button" />
+				<input onclick="what_use_hap();" value="HaP怎么用?" class="bok" type="button"  />		
+			
+				<input onclick="what_apn();" value="接入点是什么?" class="bok" type="button" />
+				<input onclick="what_phost();" value="伪装Host怎么用?" class="bok" type="button" />
+				<input onclick="what_mode();" value="模式是什么?" class="bok" type="button" />
+				<input onclick="what_ft();" value="防跳什么?" class="bok" type="button" />
+			    </h2>
+				<p>HaP是全球首个安卓平台的HaProxy</br>
+				本软件由:淡淡的回忆编写</br>细节化配置文件，新增语法，针对安卓优化等等</br>
+				本软件官网:http://byml.net 八云免流 欢迎⊙ω⊙</br>
+				HaP简单来说就是一个本地代理服务器，通过设置接入点开启防跳，来拦截http/s请求，然后经过模式的修改再转发给网关。
+				</p>
+				<h2>常见问题：</h2>
+				<h2>
+				注：HaP支持免root启动，但是防跳脚本无法使用具体看第8条说明，<br>
+				<br>注意:HaP的全局uid为:3004(root下运行)<br>
+				免root运行情况下，HaP的全局uid为HaP软件的uid<br>
+				</h2>	
+				 <h3>1.伪装Host1/2需要更改！</h3>
+				<p>
+					 由于现在大多模式有调用伪装Host1/2<br>
+					 所以需要把:选项>伪装Host1/2改成需要伪装的Host进行伪装<br>
+					 记得要点击下面的保存按钮⊙▽⊙<br>
+				</p>
+		
+				  <h3>2.HaP的语法帮助在那？</h3>
+				<p>
+						点击一个模式>编辑模式>进入编辑界面>点击菜单键>点击语法帮助
+				</p>
+		
+				
+				<h3>3.接入点怎么设置？？</h3>
+				<p>一般手机的接入点是:设置>移动网络>接入点设置(APN)<br>
+				进入后新建接入点<br>
+				名称:HaP<br>
+				APN:<br>
+				联通的APN为:3gwap<br>
+				移动的APN为:cmwap<br>
+				电信的APN为:ctwap<br>
+				代理:127.0.0.1<br>
+				端口:8787<br>
+				保存就行了....<br>
+				这样接入点就OK了<br>
+				<br>
+				下面是针对不能新建接入点的用户<br>
+				进入后，简单的办法(针对不能新建接入点的用户):<br><br>
+				可以修改接入点的:<br>
+				联通卡点进:3gwap(uniwap)<br>
+				把代理:10.0.0.172改成127.0.0.1<br>
+				端口:80改成:8787<br>
+				移动卡进:cmwap<br>
+				把代理:10.0.0.172改成:127.0.0.1<br>
+				把端口:80改成:8787<br>
+				电信卡进:ctwap<br>
+				把代理:10.0.0.200改成:127.0.0.1<br>
+				把端口:80改成:8787</h2>
+				</p>
+				<p>电信得需要注意下:<br>
+ 	            记住这个代理服务器的IP地址<br>
+ 	            因为在<br>
+ 	            HaP-选项中默认的代理是10.0.0.172<br>
+		    	电信用户需要把10.0.0.172<br>
+			    改成ctwap接入点代理IP:10.0.0.200<br></p>
+
+
+			</li>
+			<li>
+				<h3>
+					<div style="border-bottom: 1px solid #cccccc; padding: 0 18px;"></div>
+				</h3>
+				<h3>4.怎么导入模式？</h3>
+				<p>导入模式，简单的办法，用Re文件管理器点击.mhp模式后戳文件</br>弹出选择打开程序，选择HaP程序，然后就会自动导入模式</p>
+
+			</li>
+			<li>
+				<h3>
+					<div style="border-bottom: 1px solid #cccccc; padding: 0 18px;"></div>
+				</h3>
+				<h3>5.怎么启动一个模式？</h3>
+				<p>导入模式后，可能不知道怎么启动</br>在软件首页点击要启动的模式，会出现下拉的四个选项</br>依次是:</br><b>启动模式:>启动当前模式</br>编辑模式:>编辑当前模式</br>导出模式:>导出当前模式</br>删除模式:>删除当前模式</b></br>相信这些功能不用解释吧？</p>
+
+			</li>
+			
+				<li>
+				<h3>
+					<div style="border-bottom: 1px solid #cccccc; padding: 0 18px;"></div>
+				</h3>
+				<h3>6.怎么进入HaProxy的状态页面？</h3>
+				<p>在软件首页添加一个模式<br>名字:任意，点击确定<br>进入编辑模式后，直接保存，然后启动那个模式<br>然后在浏览器:访问:http://127.0.0.1:监听端口(默认为:8787)/hap <br>如果进入一个页面，就代表HaP设置成功了(在三次启动之内，推荐多启动几次)<br> 如果是其他错误提示，就说明没设置对</p>
+
+			</li>
+			
+				<li>
+				<h3>
+					<div style="border-bottom: 1px solid #cccccc; padding: 0 18px;"></div>
+				</h3>
+				<h3>7.怎么切换代理服务器的IP和端口？</h3>
+				<p>
+				有两种方法切换，一种是在软件选项里面更换，这种是全局的(基本所以的模式都会更换，个别修改过的除外)，但不是绝对的，具体看第二种方法<br>
+				第一种方法:在软件选项>可以看到代理IP和端口的编辑框<br>
+				第一个是监听端口，第二三个编辑框才是代理IP和端口<br>
+				修改后，点击保存，需要重新启动原先的模式才能应用<br>
+				<br>然后是第二种修改方法，针对某一个模式，范伟小，适合特殊的模式<br>
+				这个修改了，全局的修改的在这就没有了效果<br>
+				点击要修改的特殊模式>编辑><br>
+				分别把，GET/POST/HTTPS(HTTPS推荐不要改)<br>
+				里的，[p_ip]和[p_port]修改成要修改的代理服务器IP和端口<br>
+				其实不修改[p_ip]和[p_port]，他们会被替换成选项里的代理IP和端口<br>
+				修改了，就不会替换了
+				
+				</p>
+
+			</li>
+				<li>
+				<h3>
+					<div style="border-bottom: 1px solid #cccccc; padding: 0 18px;"></div>
+				</h3>
+				<h3>8.怎么免root启动HaP？</h3>
+				<p>
+						由于HaP默认的用户组是inet，所以没有root权限的用户是无法启动HaP的<br>
+						具体要做的就是在配置文件中去掉设置用户组的配置代码<br>
+						方法:点击>选项>global<br>
+						找到下面两<br>
+                        user inet<br>
+                        group inet<br>
+						<br>
+						可以删掉，或者在两行前面加上#号，变成下面的<br>
+						#user inet<br>
+            #group inet<br>
+						这样就不会，设置用户组为inet<br>
+						然后保存，然后就可以正常启动HaP啦！<br><br>
+						注:没有root权限是无法使用防跳脚本的<br>
+						也就并非所以的请求都会转发到HaP处理
+
+				</p>
+				
+			
+			</li>
+				<h3>9.http-in: cannot bind socket [0.0.0.0:8787]</h3>
+				<p>
+					有时候启动HaP会提示:<b>
+					[ALERT] 095/003620 (2531) :<br>
+					Starting frontend http-in: cannot bind socket [0.0.0.0:8787]<br>
+					之类的，这样的情况有两种可能:<br>
+					1.是之前启动的HaP没正确的启动关闭导致下次启动的时候无法启动<br>
+					解决办法:<br>
+					进入选项:>长按自定义1，按钮，粘贴下面的<br>
+					for i in $(ps -aux HaP)
+					do
+					kill -9 $i >/dev/null 2&>1<br>
+					done<br>
+					echo '强关HaP执行完成.....'
+					<br>
+					然后，保存，点击执行就行了<br>
+					如果是没有root权限的用户提示这个，需要把上面的<br>
+					kill命令最后的2&>1删掉，删掉后执行会提示一些错误信息，不用管的<br>
+					执行完了后，再次启动看看，如果还提示，请看第二条<br>		
+					<br>
+					2.第二种导致的原因就是有其他的全局环境已经监听了这个端口，占用了<br>
+					导致HaP监听不了，解决办法就是关掉其他的全局环境(anmpp/almp)之类的<br>
+					然后再次启动，即可解决问题
+				</p>
+				
+			
+			</li>
+	
+			
+			<li>
+				<h3>
+					<div style="border-bottom: 1px solid #cccccc; padding: 0 18px;"></div>
+				</h3>
+				<h2>欢迎加入八云①论坛交流群(以满)，群号码：182874976</h2>
+				<h2>欢迎加入八云②论坛交流群，群号码：141346015</h2>
+				
+				<h3 style="float: right; margin: 0px 20px 0px 0px;">
+					<a href="http://byml.net" target="_blank"
+						style="color: #1295df;">去八云官网 >></a>
+				</h3>
+
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

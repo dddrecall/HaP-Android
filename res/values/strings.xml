@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">HaP</string>
+	<string name="version">1.4.5</string>
+	<string name="new_title">新版本注意事项</string>
+	
+	<string name="new_zy">
+		HaPv1.4.5 版本注意\n
+		1.全局UID更改为:3004 走:net_raw\n
+		2.android5.x用户需要进:关于>点击下载兼容包\n
+		3.新用户使用，建议先看帮助，设置接入点
+		
+		
+	</string>
+		<string name="newfix">
+			HaPv1.4.5 预览版\n\n
+			1.核心语法优化\n
+			2.核心内存优化\n
+			3.帮助语法更新\n
+			\n\n#######################\n
+			#########稳定版#########\n\n
+			HaPv1.4.3.1 2015/4/7\r\n
+			1.核心语法修复和优化\n
+			2.在语法参数后面加:号将会影响语法\n
+			\n感谢群友的反馈，让我能完善HaP！\n
+			\n########务必更新#########\n
+			HaPv1.4.3 2015/4/6\n\n
+			1.修复优化安装相关\n
+			2.优化启动停止状态脚本\n\n
+			###此版本适合新用户安装####\n
+            #######################\n\n
+			HaPv1.4.2.2 2015/4/5\n\n
+			1.重要:核心bug修复(崩溃相关)\n
+			2.替换启动停止状态命令为脚本\n
+			3.防跳QQ放行更改为半放行\n\n
+			更多细节优化，赶快吐槽下吧！\n
+			还有，希望能点击下广告\n
+			给我带来一份收入和支持!\n
+			#######################\n
+			\n
+			\n
+			HaPv1.4.2.1 2015/4/5\n
+			1.优化脚本执行\n
+			2.优化开机自启\n
+			3.优化主题背景\n
+			################\n
+			HaPv1.4.2  2015/4/1\n
+			\n
+			1.解决:自动去除Conn请求行\n
+			2.更换:默认核心更改为不支持5.0\n
+			\t\t5.0用户请去关于下载安装\n
+			3.优化:广告延迟2秒启动\n
+			4.修复:无法保存长文本的脚本\n
+			5.修复:本地IP显示问题\n\n			
+			6.自带防跳脚本完善，赶快试试吧！\n
+			更多细节优化，赶快使用吧！\n
+			还有，希望能点击下广告\n
+			给我带来一份收入和支持!\n
+			####################\n
+			\n
+			\n		
+			\nHaPv1.4.1.2更新\n
+			\n
+			1.优化添加模式\n
+			2.优化atob语法\n
+			3.修复新版本安装的问题\n
+			4.自带脚本新增wifi放行\n
+			5.修复自带防跳脚本执行问题\n
+			6.完善atob语法和修复帮助错误\n
+			注意:HaP的全局uid为:3003(root下运行)\n
+			免root运行情况下，HaP的全局uid为HaP软件的uid\n
+			\n\n#####################\n\n\n		
+			
+			HaPv1.4.1.1更新\n
+			\n
+			1.优化H-start核心文件\n
+			2.修复开机自启文件\n
+			3.优化软件主题背景\n
+			4.新增开机自启脚本执行\n
+			5.修复自带防跳脚本执行问题\n
+			6.完善atob语法\n
+			注意:HaP的全局uid为:3003(root下运行)\n
+			免root运行情况下，HaP的全局uid为HaP软件的uid\n
+			\n#####################\n\n\n
+			HaPv1.4.1更新\n
+			\n
+			1.新增更多选项可查看apn信息\n
+			2.HaProxy核心优化\n		
+			3.增加自带防跳\n
+			4.使用帮助语法完善\n
+			5.语法帮助完善部分\n
+			6.支持5.0用户(以测试(/≧▽≦/))\n
+			7.设置用户组为inet(非原创)\n
+			很多细节优化～～～～自己发觉吧>~\n
+			还有，更多里有广告条广告，不会出现弹窗广告~\n
+			为了以后能开发更多东西，希望能点击广告下载~~\n
+			开防跳后点击广告下载是走HaP代理的～～～\n
+			在这感谢支持HaP的友友们 --淡淡的回忆\n
+			Have a good day for you !
+				</string>
+		<string name="newfix_title">
+			  更新日志
+		</string>
+		<string name="edit_mode">编辑模式配置</string>
+		<string name="edit_file">编辑文件</string>
+		<string name="appinfo">所有应用信息</string>
+		<string name="help">帮助</string>
+		<string name="about">关于</string>		
+		<string name="code_help">语法帮助</string>
+		
+		<string name="ok">确定</string>
+		<string name="cancel">取消</string>
+		<string name="confirm_exit">确认返回？</string>
+		<string name="mainmenu_home">主目录</string>
+		<string name="mainmenu_refresh">刷新</string>
+		<string name="mainmenu_createdir">新建文件夹</string>
+		<string name="mainmenu_exit">返回</string>
+		<string name="file_rename">重命名</string>
+		<string name="file_delete">删除</string>
+		<string name="file_info">详情</string>
+		<string name="file_cannotopen">无法打开: %1$s</string>
+		<string name="file_exists">文件已存在！</string>
+		<string name="file_namecannotempty">文件名不能为空</string>
+		<string name="file_create_fail">创建文件失败！</string>
+		<string name="file_rename_fail">重命名失败！</string>
+		<string name="file_name">文件名</string>
+		<string name="file_size">大小</string>
+		<string name="file_contents">内容</string>
+		<string name="file_lastmodified">最后修改时间</string>
+		<string name="file_paste">粘贴</string>
+		<string name="file_copy">复制</string>
+		<string name="file_move">移动</string>
+		<string name="file_create">新建</string>
+		<string name="file_copy_fail">复制文件失败！</string>
+		<string name="file_move_fail">移动文件失败！</string>
+		<string name="file_notexists">文件不存在！</string>
+		
+</resources>

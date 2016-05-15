@@ -1,0 +1,9 @@
+#### 块:POST POST请求方法处理模块####
+backend http-post
+    mode http
+    balance roundrobin
+    ###语法区开始#####
+    
+    
+    ###语法区结束#####
+server Ser [p_ip]:[p_port]

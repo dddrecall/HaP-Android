@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_height="match_parent"
+	android:layout_width="match_parent">
+
+	<RelativeLayout
+		android:layout_height="match_parent"
+		android:layout_width="match_parent">
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="HaP的启动命令"
+			android:layout_width="match_parent"
+			android:gravity="center"
+			android:background="@drawable/btitle"
+			android:textColor="#000000"
+			android:id="@+id/kjzqTextView4"/>
+
+		<EditText
+			android:layout_height="wrap_content"
+			android:ems="10"
+			android:layout_width="match_parent"
+			android:id="@+id/kjzqEditText1"
+			android:layout_below="@id/kjzqTextView4"/>
+
+		<TextView
+			android:layout_height="wrap_content"
+			android:text="选择开机自动执行的脚本"
+			android:layout_width="match_parent"
+			android:layout_below="@id/kjzqEditText1"
+			android:id="@+id/kjzqTextView3"
+			android:gravity="center"
+			android:background="@drawable/btitle"
+			android:textColor="#1DD4D4"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="horizontal"
+			android:layout_below="@id/kjzqTextView3"
+			android:gravity="center">
+
+			<CheckBox
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:id="@+id/kjzqCheckBox1"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Text"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:gravity="center"
+				android:id="@+id/kjzqTextView1"/>
+
+			<CheckBox
+				android:layout_height="wrap_content"
+				android:layout_width="wrap_content"
+				android:id="@+id/kjzqCheckBox2"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="Text"
+				android:layout_width="wrap_content"
+				android:layout_weight="1.0"
+				android:gravity="center"
+				android:id="@+id/kjzqTextView2"/>
+
+		</LinearLayout>
+
+	</RelativeLayout>
+
+</ScrollView>
+
